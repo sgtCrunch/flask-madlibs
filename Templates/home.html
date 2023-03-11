@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Madlibs{% endblock %}
+{% block h1 %}Madlibs!{% endblock %}
+
+{% block content%}
+
+<div id="Madlib-Area">
+
+    <div class="dropdown">
+        <button class="dropbtn">Stories</button>
+        <div class="dropdown-content">
+            {% for story in stories %}
+            <a href="/form/{{story.title}}">{{ story.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

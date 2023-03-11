@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Madlibs Create Story{% endblock %}
+
+{% block h1 %}Madlibs Create Story{% endblock %}
+
+{% block content %}
+
+<form class = "madlib-form" id="add-story" action="/{{ story.title }}">
+    
+    {% for prompt in story.prompts %}
+    <div class="prompt">
+        <label>{{ prompt.replace("_"," ") }}</label>
+        <input type ="text" name="{{prompt}}"/>
+    </div>
+    {% endfor %}
+
+    <div class="prompt">
+        <label></label>
+        <button class="button">Create Story</button>
+    </div>
+
+</form>
+
+{% endblock %}
+
